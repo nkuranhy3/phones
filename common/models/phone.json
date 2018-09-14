@@ -1,0 +1,36 @@
+{
+  "name": "Phone",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "brand": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "picture": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
