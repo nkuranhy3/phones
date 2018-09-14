@@ -14,7 +14,6 @@ class PhoneDetails extends Component{
     }
     getPhoneDetails(){
         const PhoneId = this.props.match.params.id;
-
         axios.get(`http://localhost:3000/api/Phones/${PhoneId}`)
         .then(response=> {
             this.setState({details: response.data}, () =>{
@@ -22,6 +21,16 @@ class PhoneDetails extends Component{
             });
         });
     }
+    onDelete(){
+      let PhoneId =this.state.details.id;
+      axios.delete(`http://localhost:3000/api/Phones/${PhoneId}`)
+      .then(response =>{
+        this.props.history.push('/')
+      }).catch(error=>{
+        console.log(error)
+      })
+    }
+
     render(){
 
         return(
@@ -33,9 +42,8 @@ class PhoneDetails extends Component{
                  <p>{this.state.details.rating}</p>
                  <p>{this.state.details.color}</p>
                 <Link to ={`Phones/${this.state.details.id}`} className='btn pink' > Edit</Link>
-                <button className='btn red' > Delete </button>
+                <button onClick={this.onDelete.bind(this)} className='btn red' > Delete </button>
                 <br /><br />
-
                 <Link to ='/' className='btn blue' > Back</Link>
             </div>
         )

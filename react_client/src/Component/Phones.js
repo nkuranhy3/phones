@@ -35,12 +35,12 @@ render(){
     return(
         <div>
             <h1>Phones Page</h1>
-            <ul className="collection">
+            <ul className='collection'>
               {phoneList }
             </ul>
         </div>
     )
-}
+  }
 }
 
 export default Phones;
