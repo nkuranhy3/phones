@@ -1,6 +1,8 @@
 import React, { Component} from 'react';
 import PhoneList from './PhoneList';
+import Slider from './Slider';
 import axios from 'axios';
+
 
 
 class Phones extends Component {
@@ -34,11 +36,12 @@ render(){
     })
     return(
         <div>
-            <h1>Phones Page</h1>
+          < Slider />
             <ul className='collection'>
               {phoneList }
             </ul>
-        </div>
+
+       </div>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link} from 'react-router-dom';
 import axios from 'axios';
+import '../App.css'
 
 class PhoneDetails extends Component{
     constructor(props){
@@ -34,13 +35,16 @@ class PhoneDetails extends Component{
     render(){
 
         return(
-            <div>
-                <img alt="phone" src = {this.state.details.picture} height ="200"/>
+            <div className="container">
+
                  <h1><b>{this.state.details.name}</b></h1>
                  <p>{this.state.details.brand}</p>
                  <p>{this.state.details.company}</p>
                  <p>{this.state.details.rating}</p>
                  <p>{this.state.details.color}</p>
+                 <div id="gallery" className="section section-gallery scrollspy" >
+              <img className="materialbox responsive-img" alt="phone" src = {this.state.details.picture}/>
+              </div>
                 <Link to ={`Phones/${this.state.details.id}`} className='btn pink' > Edit</Link>
                 <button onClick={this.onDelete.bind(this)} className='btn red' > Delete </button>
                 <br /><br />

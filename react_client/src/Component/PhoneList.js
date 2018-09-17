@@ -10,11 +10,17 @@ class ProductList extends Component{
     }
     render(){
         return(
-            <li className="collection-item ">
-               <Link to ={`/Phones/${this.state.item.id}`}>
-                     {this.state.item.name}
-                </Link>
-            </li>
+          <div className="container" >
+
+      <table className="highlight" >
+          <tr className="center">
+            <td> <Link to ={`/Phones/${this.state.item.id}`}> {this.state.item.name}</Link> </td>
+            <td>$  {this.state.item.price}</td>
+          </tr>
+
+      </table>
+          </div>
+
         )
     }
 }
